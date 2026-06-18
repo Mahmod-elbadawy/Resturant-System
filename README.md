@@ -1,2 +1,2 @@
- Resturant System
-A simple Resturant System with Menu by Python & Pandas
+Resturant System
+ A simple Resturant System with Menu by Python & Pandas
