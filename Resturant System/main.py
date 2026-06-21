@@ -16,7 +16,7 @@ if "1" in weather:
     drinks = df[df["Category"] == "Drink"]
 
     for _, row in drinks.iterrows():
-        print(f"\nID:{row["ID"]} | {row["Name"]:<10} | {row["Price"]}EGP  | Quantity:{row["Quantity"]}")
+        print(f"\nID:{row["ID"]}-> {row["Name"]:<10} | {row["Price"]}EGP  | Quantity:{row["Quantity"]}")
 
 elif "2" in weather:
     print("You're in the right place👍, \nWe have food that will warm you up🔥😊")
@@ -25,7 +25,7 @@ elif "2" in weather:
     food = df[df["Category"] == "Food"]
 
     for _, row in food.iterrows():
-        print(f"ID:{row["ID"]} | {row["Name"]:<10} | {row["Price"]}EGP | Quantity:{row["Quantity"]}")
+        print(f"ID:{row["ID"]}-> {row["Name"]:<10} | {row["Price"]}EGP | Quantity:{row["Quantity"]}")
 
 else:
     print("Welcome😊!, You light up the  Resturant\nFeel free to order anything you'd like🍔😊😋")
@@ -40,12 +40,12 @@ while True:
     for category in df["Category"].unique():
 
         if category == "Food":
-            print("\n          ==========Food🍕==========\n")
+            print("\n          ========== Food🍕 ==========\n")
 
         elif category == "Desert":
-            print("\n          ==========Desert🍰==========\n")
+            print("\n          ========== Desert🍰 ==========\n")
         elif category == "Drink":
-            print("\n          ==========Drinks🍵==========\n")
+            print("\n          ========== Drinks🍵 ==========\n")
 
         else:
             print(f"\n {category}")
@@ -93,7 +93,7 @@ while True:
 
         df.loc[df["ID"] == food_id, "Quantity"] = avalid_quantity - Quantity
 
-        print("Added to cart 👍")
+        print("Added to cart ✅🛒")
 
     elif user_choise == "2":
 
@@ -105,11 +105,11 @@ while True:
             for item in cart:
                 print(
                     f"{item["Name"]:<20}"
-                    f"{item["Qty"]:<7}"
+                    f"x{item["Qty"]:<7}"
                     f"{item["Price"]}EGP"
                 )
 
-            print("\n" + "=" *10+"Receipt" + "=" *10)
+            print("\n" + "=" *10+" Receipt " + "=" *10 + "\n")
 
             print(
                 f"{"Name":<15}"
@@ -117,7 +117,7 @@ while True:
                 f"{"Price":<10}"
                 f"{"Total":<10}"
                 )
-            print("-"*50)
+            print("-"*50+"\n")
             for item in cart:
                 print(
                     f"{item["Name"]:<15} "
@@ -126,7 +126,7 @@ while True:
                     f"{item["Total"]:<10}"
                 )
                 total += item["Total"]
-
+            print("\n")
             print("\n              TOTAL = " + str(total) + " EGP")
 
     elif user_choise == "3":
